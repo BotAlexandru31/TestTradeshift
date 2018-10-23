@@ -8,7 +8,7 @@ public class TriangleUtils {
 		String result = "";
 		System.out.println();
 		
-		 
+		  
 		
 		System.out.println("<<exiting method - checkTriangle - >>>");
 

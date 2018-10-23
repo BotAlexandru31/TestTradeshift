@@ -3,7 +3,7 @@ package triangletest;
 import java.io.Serializable;
 
 public class Triangle implements Serializable{
-	
+	 
 	public Triangle() {
 
 	}
