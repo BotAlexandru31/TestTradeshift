@@ -7,7 +7,7 @@ public class Triangle implements Serializable{
 	public Triangle() {
 
 	}
-
+ 
 	Double cathetus1;
 	Double cathetus2;
 	Double hypotenuse;
