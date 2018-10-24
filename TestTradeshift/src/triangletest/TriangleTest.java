@@ -15,10 +15,11 @@ public class TriangleTest {
 		Scanner userInput = new Scanner(System.in);
 		Triangle triangle = new Triangle();
 		String resultFromCheck = TriangleUtils.setUserInput(triangle, userInput);
+		try {
 		if (resultFromCheck.equals("ok")) {
 			TriangleUtils.checkTriangleType(triangle);
 		} else {
-			try {
+			
 				System.out.println("Values were inserted incorrectly. Would you like to enter new values?(y/n)");
 				if (userInput.hasNextLine()) {
 					repeatString = userInput.nextLine();
@@ -29,6 +30,7 @@ public class TriangleTest {
 						System.exit(0);
 					}
 				}
+			}
 			} catch (InputMismatchException inputMismatchEx) {
 				System.out.println("Please enter a number. [" + inputMismatchEx.getCause() + "]");
 			} catch (NoSuchElementException noElem) {
@@ -37,10 +39,9 @@ public class TriangleTest {
 				System.out.println(e.getMessage());
 			} finally {
 				if (userInput != null) {
-					System.out.println("closing userInput");
+					System.out.println("closing userInput scanner");
 					userInput.close();
 				}
 			}
 		}
 	}
-}
