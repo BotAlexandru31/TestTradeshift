@@ -52,6 +52,8 @@ public class TriangleUtils {
 
 	//this method calls checkUserInput(Double cathetus1, Double cathetus2, Double hypotenuse)
 	//if the values were correctly inserted it will set the values on a Triangle type object.
+	
+	//exception handling: in case of inserting characters instead of numbers
 	public static String setUserInput(Triangle triangle, Scanner userInput) {
 		System.out.println("...getting user input");
 		Double cathetus1 = 0D;

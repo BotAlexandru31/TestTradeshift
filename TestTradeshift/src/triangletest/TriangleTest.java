@@ -18,7 +18,7 @@ public class TriangleTest {
 	 * otherwise it will ask the user for another set of input values
 	 * if the answer is "y" then the program will allow the user for another set of values and continue with checking the triangle type.
 	 * 
-	 * exception handling: in case of inserting characters instead of numbers
+	 * 
 	 * 
 	 * at the end it will close the scanner for resource saving.
 	 */
@@ -43,10 +43,6 @@ public class TriangleTest {
 					}
 				}
 			}
-			} catch (InputMismatchException inputMismatchEx) {
-				System.out.println("Please enter a number. [" + inputMismatchEx.getCause() + "]");
-			} catch (NoSuchElementException noElem) {
-				System.out.println(noElem.getMessage());
 			} catch (Exception e) {
 				System.out.println(e.getMessage());
 			} finally {
