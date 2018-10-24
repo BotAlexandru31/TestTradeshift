@@ -4,13 +4,18 @@ import java.io.Serializable;
 
 public class Triangle implements Serializable{
 	 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public Triangle() {
 
 	}
  
-	Double cathetus1;
-	Double cathetus2;
-	Double hypotenuse;
+	private Double cathetus1;
+	private Double cathetus2;
+	private	Double hypotenuse;
 
 	public Triangle(Double cat1, Double cat2, Double hyp) {
 		this.cathetus1 = cat1;

@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class TriangleUtils {
 
 	public static String checkTriangleType(Triangle triangle) {
+		System.out.println("<<entering method - checkTriangleType - >>>");
 		String result = "";
 
 		Double cathetus1 = triangle.getCathetus1();
@@ -24,30 +25,27 @@ public class TriangleUtils {
 		if (cathetus1.equals(cathetus2) && cathetus2.equals(hypotenuse)) {
 			result = TriangleType.EQUILATERAL.toString();
 		}
-		System.out.println("result: " + result);
-		System.out.println("");
-
+		System.out.println("Based on values given, the triangle is: " + result + "\n");
+		System.out.println("<<<exiting method - checkTriangleType - >>>");
 		return result;
 	}
 
 	public static String checkUserInput(Double cathetus1, Double cathetus2, Double hypotenuse) {
 		System.out.println("<<entering method - checkUserInput - >>>");
 		String message = null;
-
 		if (cathetus1 > 0 && cathetus2 > 0 && hypotenuse > 0) {
 			message = "ok";
+			System.out.println("The values are valid.");
+
 		} else {
 			message = "ko";
 			System.out.println("Check failed! Values should be > 0.");
-
 		}
 		System.out.println("<<exiting method - checkUserInput - >>>");
-
 		return message;
-
 	}
 
-	public static String getUserInput(Triangle triangle, Scanner userInput) {
+	public static String setUserInput(Triangle triangle, Scanner userInput) {
 		System.out.println("...getting user input");
 		Double cathetus1 = 0D;
 		Double cathetus2 = 0D;
@@ -55,7 +53,7 @@ public class TriangleUtils {
 		String result = null;
 
 		try {
-			userInput = new Scanner(System.in);
+			userInput=new Scanner(System.in);
 			System.out.println(" Enter the value for the first cathetus:");
 			cathetus1 = userInput.nextDouble();
 			System.out.println(" Enter the value for the second cathetus: ");
@@ -75,18 +73,9 @@ public class TriangleUtils {
 
 		} catch (InputMismatchException inputMismatchEx) {
 			System.out.println("Please enter a number. [" + inputMismatchEx.getCause() + "]");
-			if (userInput != null) {
-				System.out.println("closing userInput");
-				userInput.close();
-			}
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
-			if (userInput != null) {
-				System.out.println("closing userInput");
-				userInput.close();
-			}
 		}
-
 		return result;
 	}
 

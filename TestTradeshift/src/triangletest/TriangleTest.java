@@ -7,29 +7,25 @@ import java.util.Scanner;
 public class TriangleTest {
 
 	public static void main(String[] args) {
-		
 		testTriangle(args);
-		
 	}
 
 	public static void testTriangle(String[] args) {
 		String repeatString = null;
-		Scanner userInput = null;
+		Scanner userInput = new Scanner(System.in);
 		Triangle triangle = new Triangle();
-		String resultFromCheck = TriangleUtils.getUserInput(triangle, userInput);
+		String resultFromCheck = TriangleUtils.setUserInput(triangle, userInput);
 		if (resultFromCheck.equals("ok")) {
 			TriangleUtils.checkTriangleType(triangle);
-
 		} else {
 			try {
-				System.out.println("Check user input failed. Would you like to enter new values?(y/n)");
-				System.out.println("before scanner");
-				Scanner newScanner = new Scanner(System.in);
-				if (newScanner.hasNextLine()) {
-					repeatString = newScanner.nextLine();
+				System.out.println("Values were inserted incorrectly. Would you like to enter new values?(y/n)");
+				if (userInput.hasNextLine()) {
+					repeatString = userInput.nextLine();
 					if ("y".equals(repeatString)) {
 						main(args);
-					} else {
+					} 
+					else {
 						System.exit(0);
 					}
 				}
@@ -41,7 +37,7 @@ public class TriangleTest {
 				System.out.println(e.getMessage());
 			} finally {
 				if (userInput != null) {
-					System.out.println("closing repeatInput");
+					System.out.println("closing userInput");
 					userInput.close();
 				}
 			}
