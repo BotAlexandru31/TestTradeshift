@@ -3,7 +3,9 @@ package triangletest;
 import java.io.Serializable;
 
 public class Triangle implements Serializable{
-	 
+	//base class
+	//contains core private members and public setters and getters.
+	//serializable class -useful at a higher level programming (JEE) when sending objects between different systems
 	/**
 	 * 
 	 */

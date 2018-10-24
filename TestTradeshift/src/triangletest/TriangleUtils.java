@@ -4,7 +4,11 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class TriangleUtils {
-
+	//utility class
+	//manages data related to Triangle
+	
+	
+	//this method takes an object of type Triangle and compares its sides to decide upon its type.
 	public static String checkTriangleType(Triangle triangle) {
 		System.out.println("<<entering method - checkTriangleType - >>>");
 		String result = "";
@@ -30,6 +34,7 @@ public class TriangleUtils {
 		return result;
 	}
 
+	//this method checks to see if user input is valid (> 0 )
 	public static String checkUserInput(Double cathetus1, Double cathetus2, Double hypotenuse) {
 		System.out.println("<<entering method - checkUserInput - >>>");
 		String message = null;
@@ -45,6 +50,8 @@ public class TriangleUtils {
 		return message;
 	}
 
+	//this method calls checkUserInput(Double cathetus1, Double cathetus2, Double hypotenuse)
+	//if the values were correctly inserted it will set the values on a Triangle type object.
 	public static String setUserInput(Triangle triangle, Scanner userInput) {
 		System.out.println("...getting user input");
 		Double cathetus1 = 0D;
